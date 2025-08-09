@@ -9,8 +9,46 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font, Arial, sans-serif);
+  font-variation-settings: 'wght' var(--card-text-font-weight, 400);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+}
+
+.container {
+  margin-inline: auto;
+  inline-size: var(--card-size);
+}
+
+.header {
+  padding-block: 100px;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: solid 2px #000;
+  background-color: #fff;
+  padding: var(--header-margin-top-bottom) var(--header-margin-left-right);
+}
+
+.header__logo {
+  font-family: var(--font-accent), fantasy;
+  font-size: var(--logo-size);
+  text-transform: uppercase;
+  font-weight: var(--card-text-font-weight);
+}
+
+.header__title {
+  font-family: var(--font-accent), fantasy;
+  font-size: var(--logo-title-size);
+  text-transform: uppercase;
+  font-weight: var(--card-text-font-weight);
 }
