@@ -17,6 +17,7 @@
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
