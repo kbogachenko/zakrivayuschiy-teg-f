@@ -3,8 +3,9 @@
   --font: "Inter-Variable";
   --font-accent: "PressStart2P-Regular";
   --main-font-size: 18px;
-  --card-text-font-weight: 400;
-  --card-title-font-weight: 700;
+  --header-font-weight: 400;
+  --card-text-font-weight: 410;
+  --card-title-font-weight: 715;
 
   --bg-color: #fff;
   --bg-image: repeating-linear-gradient(
@@ -30,4 +31,9 @@
     --logo-title-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
     --header-margin-top-bottom: clamp(7.625rem, 0.751vw + 7.449rem, 8.125rem);
     --header-margin-left-right: clamp(1rem, 9.953vw - 1.333rem, 7.625rem);
+
+    --watermark-font-size: 14px;
+    --watermark-font-weight: 400;
+    --watermark-color: #000;
+    --watermark-stroke-color: #fff;
 }

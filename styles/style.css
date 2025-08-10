@@ -13,7 +13,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font, Arial, sans-serif);
-  font-variation-settings: 'wght' var(--card-text-font-weight, 400);
+  font-variation-settings: 'wght' var(--header-font-weight, 400);
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
@@ -44,12 +44,137 @@
   font-family: var(--font-accent), fantasy;
   font-size: var(--logo-size);
   text-transform: uppercase;
-  font-weight: var(--card-text-font-weight);
+  font-weight: var(--header-font-weight);
 }
 
 .header__title {
   font-family: var(--font-accent), fantasy;
   font-size: var(--logo-title-size);
   text-transform: uppercase;
-  font-weight: var(--card-text-font-weight);
+  font-weight: var(--header-font-weight);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  border: solid 2px #000;
+  background-color: #fff;
+}
+
+.card__title {
+  font-variation-settings: "wght" var(--card-title-font-weight);
+  font-size: var(--font-size);
+  padding: 4px 10px;
+}
+
+.card__image-wrapper {
+  position: relative;
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__image-watermark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-accent), fantasy;
+  font-weight: var(--watermark-font-weight);
+  font-size: var(--watermark-font-size);
+  text-transform: uppercase;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px var(--watermark-stroke-color);
+  text-shadow:
+   1px 1px 0 var(--watermark-stroke-color),
+   -1px -1px 0 var(--watermark-stroke-color),
+   1px -1px 0 var(--watermark-stroke-color),
+   -1px 1px 0 var(--watermark-stroke-color),
+}
+
+@supports (text-stroke: 1px var(--watermark-stroke-color)) {
+  .card__image-watermark {
+    text-stroke: 1px var(--watermark-stroke-color);
+    text-shadow: none;
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  line-height: 1.16667;
+}
+
+.card__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.card__icon-button {
+  height: 38px;
+  width: 38px;
+  padding-inline: 0px;
+  border: solid 2px transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 38px;
+}
+
+.button {
+  font-family: var(--font-accent), fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.9;
+  color: #000;
+  background-color: #fff;
+}
+
+.save-controls {
+  display: flex;
+  justify-content: center;
+  padding-block: 50px;
+}
+
+.save-button {
+  width: 335px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  gap: 8px;
+}
+
+.floppy {
+  width: 21px;
+  height: 21px;
 }
