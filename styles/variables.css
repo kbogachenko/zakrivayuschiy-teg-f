@@ -36,4 +36,9 @@
     --watermark-font-weight: 400;
     --watermark-color: #000;
     --watermark-stroke-color: #fff;
+
+    --blend-color: #fff;
+
+    --contour-color: #000;
+    --animation-fill-color: #f00;
 }
