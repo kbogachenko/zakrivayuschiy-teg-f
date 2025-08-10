@@ -12,8 +12,8 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font, Arial, sans-serif);
-  font-variation-settings: 'wght' var(--header-font-weight, 400);
+  font-family: var(--font, Arial), sans-serif;
+  font-variation-settings: "wght" var(--header-font-weight, 400);
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
@@ -40,14 +40,14 @@
 }
 
 .header__logo {
-  font-family: var(--font-accent), fantasy;
+  font-family: var(--font-accent, Copperplate), fantasy;
   font-size: var(--logo-size);
   text-transform: uppercase;
   font-weight: var(--header-font-weight);
 }
 
 .header__title {
-  font-family: var(--font-accent), fantasy;
+  font-family: var(--font-accent, Copperplate), fantasy;
   font-size: var(--logo-title-size);
   text-transform: uppercase;
   font-weight: var(--header-font-weight);
@@ -66,7 +66,7 @@
 
 .card__title {
   font-variation-settings: "wght" var(--card-title-font-weight);
-  font-size: var(--font-size);
+  font-size: var(--main-font-size);
   padding: 4px 10px;
 }
 
@@ -79,6 +79,7 @@
 .card__image {
   display: block;
   inline-size: 100%;
+  max-height: clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem);
   object-fit: cover;
   object-position: center;
 }
@@ -87,24 +88,23 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--font-accent), fantasy;
+  font-family: var(--font-accent, Copperplate), fantasy;
   font-weight: var(--watermark-font-weight);
   font-size: var(--watermark-font-size);
   text-transform: uppercase;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px var(--watermark-stroke-color);
-  text-shadow:
-   1px 1px 0 var(--watermark-stroke-color),
-   -1px -1px 0 var(--watermark-stroke-color),
-   1px -1px 0 var(--watermark-stroke-color),
-   -1px 1px 0 var(--watermark-stroke-color),
+  text-shadow: 1px 1px 0 var(--watermark-stroke-color),
+    -1px -1px 0 var(--watermark-stroke-color),
+    1px -1px 0 var(--watermark-stroke-color),
+    -1px 1px 0 var(--watermark-stroke-color);
 }
 
-@supports (text-stroke: 1px var(--watermark-stroke-color)) {
-  .card__image-watermark {
-    text-stroke: 1px var(--watermark-stroke-color);
+@supports (-webkit-text-stroke: 1px var(--watermark-stroke-color)) or (text-stroke: 1px var(--watermark-stroke-color)) {
+  .image-watermark {
     text-shadow: none;
+    -webkit-text-stroke: 1px var(--watermark-stroke-color);
+    text-stroke: 1px var(--watermark-stroke-color);
   }
 }
 
@@ -121,6 +121,7 @@
   flex-direction: column;
   gap: 25px;
   line-height: 1.16667;
+  font-size: var(--main-font-size);
 }
 
 .card__buttons {
@@ -155,7 +156,7 @@
 }
 
 .button {
-  font-family: var(--font-accent), fantasy;
+  font-family: var(--font-accent, Copperplate), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 0.9;
@@ -182,7 +183,8 @@
 .save-controls {
   display: flex;
   justify-content: center;
-  padding-block: 50px;
+  padding-block-start: 50px;
+  padding-block-end: 100px;
 }
 
 .save-button {
@@ -214,7 +216,7 @@
 }
 
 .modal__text {
-  font-family: var(--font-accent), fantasy;
+  font-family: var(--font-accent, Copperplate), fantasy;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
@@ -226,28 +228,25 @@
   padding: 12.5px 0;
 }
 
-
 @media (width <=375px) {
   .main {
-  gap: 48px;
+    gap: 48px;
   }
 
+  .save-button {
+    width: 306px;
+    height: 84px;
+    flex-direction: column;
+  }
 
-.save-button {
-  width: 306px;
-  height: 84px;
-  flex-direction: column;
-}
+  .modal[open] {
+    padding: 30px 37px;
+  }
 
-.modal[open] {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.floppy {
-  width: 28px;
-  height: 28px;
-}
+  .floppy {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .filter-contrast {
@@ -287,8 +286,8 @@
 }
 
 .button:focus {
-   outline: none;
-   box-shadow: 2px 2px 0 0 #000;
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
 }
 
 .button::before {
@@ -335,7 +334,6 @@
 .like-icon {
   cursor: pointer;
 }
-
 
 .like-icon:hover .core {
   fill: var(--contour-color);

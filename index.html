@@ -530,35 +530,35 @@
           </div>
         </div>
       </article>
-    </main>
-    <div class="save-controls">
-      <button
-        type="button"
-        class="save-button button"
-        onclick="window['save'].showModal()"
-        aria-controls="save"
-      >
-        <svg class="floppy" viewBox="0 0 39 39">
-          <use href="./svg/floppy.svg#floppy" />
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-    </div>
-    <dialog id="save" class="modal">
-      <div class="modal__container">
-        <svg class="floppy" viewBox="0 0 39 39">
-          <use href="./svg/floppy.svg#floppy" />
-        </svg>
-        <p class="modal__text">Вставьте дискету, чтобы продолжить</p>
+      <div class="save-controls">
+        <button
+          type="button"
+          class="save-button button"
+          onclick="window['save'].showModal()"
+          aria-controls="save"
+        >
+          <svg class="floppy" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy" />
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="modal__button button"
-        onclick="window['save'].close()"
-      >
-        <span class="button__text">Ок</span>
-      </button>
-    </dialog>
+      <dialog id="save" class="modal">
+        <div class="modal__container">
+          <svg class="floppy" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy" />
+          </svg>
+          <p class="modal__text">Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button
+          type="button"
+          class="modal__button button"
+          onclick="window['save'].close()"
+        >
+          <span class="button__text">Ок</span>
+        </button>
+      </dialog>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
