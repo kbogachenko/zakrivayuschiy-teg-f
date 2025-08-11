@@ -17,6 +17,7 @@
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
@@ -140,6 +141,7 @@
   align-items: center;
   justify-content: center;
   transition: border-color 0.3s ease;
+  background-color: transparent;
 }
 
 .card__like-button {
@@ -183,7 +185,6 @@
 .save-controls {
   display: flex;
   justify-content: center;
-  padding-block-start: 50px;
   padding-block-end: 100px;
 }
 
@@ -229,10 +230,6 @@
 }
 
 @media (width <=375px) {
-  .main {
-    gap: 48px;
-  }
-
   .save-button {
     width: 306px;
     height: 84px;
