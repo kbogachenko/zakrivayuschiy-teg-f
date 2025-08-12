@@ -26,7 +26,7 @@
 }
 
 .header {
-  padding-block: 100px;
+  padding-block: 98px;
 }
 
 .header__container {
@@ -101,7 +101,8 @@
     -1px 1px 0 var(--watermark-stroke-color);
 }
 
-@supports (-webkit-text-stroke: 1px var(--watermark-stroke-color)) or (text-stroke: 1px var(--watermark-stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--watermark-stroke-color)) or
+  (text-stroke: 1px var(--watermark-stroke-color)) {
   .image-watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--watermark-stroke-color);
@@ -129,13 +130,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 4px;
 }
 
 .card__icon-button {
-  height: 38px;
-  width: 38px;
-  padding-inline: 0px;
+  height: 39px;
+  padding: 0px;
   border: solid 2px transparent;
   display: flex;
   align-items: center;
@@ -244,6 +244,10 @@
     width: 28px;
     height: 28px;
   }
+
+  .header {
+    padding-block: 100px;
+  }
 }
 
 .filter-contrast {
@@ -280,6 +284,11 @@
 
 .card__icon-button:focus {
   outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border-color: #000;
 }
 
 .button:focus {
@@ -326,10 +335,6 @@
 .main-body {
   fill: transparent;
   transition: fill 0.3s linear;
-}
-
-.like-icon {
-  cursor: pointer;
 }
 
 .like-icon:hover .core {
